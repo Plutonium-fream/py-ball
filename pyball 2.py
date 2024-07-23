@@ -72,7 +72,7 @@ def main():
         elif mode == "4":
             player_level = 1
             gk_level = 9
-            defense_alg = 9
+            defense_alg = 8
         else:
             print("Not a valid option, you need to choose between 1, 2, 3, and 4")
             intro()
