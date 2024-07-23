@@ -4,7 +4,6 @@
 import random
 import time
 
-# Define global variables
 presetq = None
 mode = None
 
