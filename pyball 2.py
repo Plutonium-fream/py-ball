@@ -7,6 +7,7 @@ import time
 presetq = None
 mode = None
 
+
 def intro():
     global presetq, mode
     introart = """
@@ -29,9 +30,9 @@ def intro():
     print("******************")
     print("welcome to pyball!")
     print("******************")
-    
+
     presetq = input("Do you want to choose a difficulty (d) or customize the stats yourself (c)? ").lower()
-    
+
     if presetq == "d":
         mode = input("Very well, do you want easy (1), medium (2), hard (3), or EXTREME (4) mode? ")
     elif presetq == "c":
@@ -39,6 +40,7 @@ def intro():
     else:
         print("Not a valid option, you need to type d or c")
         intro()
+
 
 def goalart():
     artprint = """
@@ -51,6 +53,7 @@ def goalart():
                                            
 """
     print(artprint)
+
 
 def main():
     global presetq, mode
@@ -107,7 +110,7 @@ def main():
     """
     print(pitch)
     defway = input("Do you want to go through the center, the left, or the right? ").lower()
-    
+
     if defway == "center":
         momentum = 30 - defensive_central
     elif defway == 'right':
@@ -142,44 +145,39 @@ def main():
     shooting_coordinatesL = int(input("Where do you want to shoot horizontally? "))
     average = (shooting_coordinatesH + shooting_coordinatesL) / 2
     average + 1
-    averageWAY = random.randint(1,2)
+    averageWAY = random.randint(1, 2)
     if averageWAY == 2:
         if average >= 5:
             luck = random.randint(1, 5)
             momentum -= 5 + luck
             goalkeeper_savenumber = momentum + player_level - gk_level * 3
             if goalkeeper_savenumber > 0:
-             print("GOAL!!!!")
-             goalart()
-             print("The goalkeeper went the right way but was too slow!")
+                print("GOAL!!!!")
+                goalart()
+                print("The goalkeeper went the right way but was too slow!")
             else:
                 print("The goalkeeper saved the shot!")
         else:
             print("GOAL!!!!")
-            goalart
-            print("The goalkeeper went the wrong way!")        
+            goalart()
+            print("The goalkeeper went the wrong way!")
     else:
         if average <= 5:
             luck = random.randint(1, 5)
             momentum -= 5 + luck
             goalkeeper_savenumber = momentum + player_level - gk_level * 3
             if goalkeeper_savenumber > 0:
-             print("GOAL!!!!")
-             goalart()
-             print("The goalkeeper went the right way but was too slow!")
+                print("GOAL!!!!")
+                goalart()
+                print("The goalkeeper went the right way but was too slow!")
             else:
                 print("The goalkeeper saved the shot!")
         else:
-         print("GOAL!!!!")
-         goalart
-         print("The goalkeeper went the wrong way!")   
+            print("GOAL!!!!")
+            goalart
+            print("The goalkeeper went the wrong way!")
 
 
-    
-    
-
-       
-    
 def play_again():
     while True:
         answer = input("Do you want to play again? (yes/no): ").strip().lower()
@@ -189,6 +187,7 @@ def play_again():
             return False
         else:
             print("Invalid input. Please enter 'yes' or 'no'.")
+
 
 # Main game loop
 while True:
