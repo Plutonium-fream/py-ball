@@ -151,7 +151,6 @@ def main():
         shooting_coordinatesL = int(input("Where do you want to shoot horizontally? "))
     except ValueError:
         print("You have to enter a number!")
-        shooting_coordinatesL = 999
         input("Press enter to restart...")
         main()
  
