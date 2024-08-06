@@ -141,10 +141,24 @@ def main():
         print(goal)
 
     print_football_goal()
-    shooting_coordinatesH = int(input("How high do you shoot? "))
-    shooting_coordinatesL = int(input("Where do you want to shoot horizontally? "))
-    average = (shooting_coordinatesH + shooting_coordinatesL) / 2
-    average + 1
+    try:
+        shooting_coordinatesH = int(input("How high do you shoot? "))
+    except ValueError:
+        print("You have to enter a number!")
+        input("Press enter to restart...")
+        main()
+    try:    
+        shooting_coordinatesL = int(input("Where do you want to shoot horizontally? "))
+    except ValueError:
+        print("You have to enter a number!")
+        shooting_coordinatesL = 999
+        input("Press enter to restart...")
+        main()
+ 
+    average = shooting_coordinatesH + shooting_coordinatesL
+    average = average / 2
+
+
     averageWAY = random.randint(1, 2)
     if averageWAY == 2:
         if average >= 5:
@@ -197,4 +211,4 @@ while True:
         print("Thank you for playing!")
         time.sleep(2)
         break
-# pycharm test11
+
